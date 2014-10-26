@@ -11,7 +11,10 @@
     "karma-plugin",
     "karma-reporter"
   ],
-  "author": "Pier Fumagalli <pier@usrz.com>",
+  "author": {
+    "name": "Pier Fumagalli",
+    "email": "pier@usrz.com"
+  },
   "dependencies": {
     "colors": ">=1.0"
   },
