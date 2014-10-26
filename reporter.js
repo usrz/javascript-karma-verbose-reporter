@@ -1,7 +1,7 @@
 require('colors');
 var util = require('util');
 
-function DetailedReporter(logger) {
+function VerboseReporter(logger) {
 
   /*
    * Known events:
@@ -195,7 +195,7 @@ function DetailedReporter(logger) {
 /* MODULE DECLARATION                                                         */
 /* ========================================================================== */
 
-DetailedReporter.$inject = ['logger'];
+VerboseReporter.$inject = ['logger'];
 module.exports = {
-  'reporter:detailed': ['type', DetailedReporter]
+  'reporter:verbose': ['type', VerboseReporter]
 };
