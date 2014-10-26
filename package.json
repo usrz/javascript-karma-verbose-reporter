@@ -1,0 +1,22 @@
+{
+  "name": "karma-verbose-reporter",
+  "version": "0.0.0",
+  "description": "A Karma reporter bringing verbosity to the max.",
+  "main": "reporter.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/usrz/javascript-karma-verbose-reporter.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-reporter"
+  ],
+  "author": "Pier Fumagalli <pier@usrz.com>",
+  "dependencies": {
+    "colors": ">=1.0"
+  },
+  "peerDependencies": {
+    "karma": ">=0.12"
+  },
+  "license": "MIT"
+}
