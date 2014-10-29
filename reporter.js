@@ -100,6 +100,14 @@ function VerboseReporter(logger) {
 
   this.onRunComplete = function(browsers, results) {
 
+    for (var i in _browsers) {
+      var browser = _browsers[i];
+      var log = logger.create(browser.name);
+      browser.log.forEach(function(entry) {
+        log[entry.level](entry.message);
+      });
+      browser.log = [];
+    }
 
     print("\n");
     print("Suites and tests results:".bold.underline);
