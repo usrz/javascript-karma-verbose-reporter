@@ -72,7 +72,7 @@ function VerboseReporter(logger) {
     indent = indent || '';
 
     if (tests.results) {
-      var results = Object.keys(tests.results).sort();
+      var results = Object.keys(tests.results);
       for (var i in results) {
         var result = tests.results[results[i]];
         print(indent, '*', results[i], ':', message(result));
@@ -80,7 +80,7 @@ function VerboseReporter(logger) {
     }
 
     if (tests.suites) {
-      var suites = Object.keys(tests.suites).sort();
+      var suites = Object.keys(tests.suites);
       for (var i in suites) {
         print(indent, '-', suites[i].bold, ':');
         report(tests.suites[suites[i]], '  ' + indent);
