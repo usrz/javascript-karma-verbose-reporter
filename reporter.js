@@ -136,7 +136,6 @@ function VerboseReporter(logger) {
   };
 
   this.onBrowserLog = function(browser, message, level) {
-    if (level == 'log') level = 'info';
     forBrowser(browser).log.push({level: level, message: message});
   };
 
@@ -163,7 +162,7 @@ function VerboseReporter(logger) {
     var log = logger.create(browser.name + suite + result.description);
 
     b.log.forEach(function(entry) {
-      log[entry.level](entry.message);
+      (log[entry.level] || log.info)(entry.message);
     });
     b.log = [];
 
