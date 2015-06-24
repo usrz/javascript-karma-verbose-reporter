@@ -162,7 +162,7 @@ function VerboseReporter(logger) {
     var log = logger.create(browser.name + suite + result.description);
 
     b.log.forEach(function(entry) {
-      (log[entry.level] || log.info)(entry.message);
+      (log[entry.level] || log.info).call(log, entry.message);
     });
     b.log = [];
 
