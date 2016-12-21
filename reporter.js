@@ -104,7 +104,7 @@ function VerboseReporter(logger) {
       var browser = _browsers[i];
       var log = logger.create(browser.name);
       browser.log.forEach(function(entry) {
-        log[entry.level](entry.message);
+        (log[entry.level] || log.info).call(call, entry.message);
       });
       browser.log = [];
     }
@@ -136,7 +136,7 @@ function VerboseReporter(logger) {
   };
 
   this.onBrowserLog = function(browser, message, level) {
-    forBrowser(browser).log.push({level: level, message: message});
+    forBrowser(browser).log.push({level: level == 'log' ? 'info' : level, message: message});
   };
 
   this.onBrowserError = function(browser, error) {
