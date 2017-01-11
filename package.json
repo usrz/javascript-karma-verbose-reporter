@@ -1,6 +1,6 @@
 {
   "name": "karma-verbose-reporter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Karma reporter bringing verbosity to the max.",
   "main": "reporter.js",
   "repository": {
@@ -15,6 +15,10 @@
     "name": "Pier Fumagalli",
     "email": "pier@usrz.com"
   },
+  "contributors": [{
+    "name": "Lucas G. Sánchez",
+    "email": "unkiwii@gmail.com"
+  }],
   "dependencies": {
     "colors": ">=1.0"
   },
