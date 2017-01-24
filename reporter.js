@@ -137,7 +137,7 @@ function VerboseReporter(logger, config) {
 
   this.onBrowserLog = function(browser, message, level) {
     if (level == 'log') level = 'info';
-    if (config.immediateLogs) {
+    if (config && config.immediateLogs) {
       var log = logger.create(browser.name);
       (log[level] || log.info).call(log, message);
     } else {
