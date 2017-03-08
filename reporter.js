@@ -104,7 +104,7 @@ function VerboseReporter(logger, config) {
       var browser = _browsers[i];
       var log = logger.create(browser.name);
       browser.log.forEach(function(entry) {
-        (log[entry.level] || log.info).call(call, entry.message);
+        (log[entry.level] || log.info).call(log, entry.message);
       });
       browser.log = [];
     }
