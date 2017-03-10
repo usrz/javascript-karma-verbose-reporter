@@ -4,7 +4,7 @@ Karma (very) Verbose Reporter
 To install, just get the tarball from GitHub via NPM:
 
 ```
-npm install --save-dev 'karma-verbose-reporter'
+npm install --save-dev karma-verbose-reporter
 ```
 
 This reporter logs everything emitted during the test phase:
