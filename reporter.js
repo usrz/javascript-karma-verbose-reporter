@@ -24,7 +24,7 @@ function VerboseReporter(logger, config) {
   var _log = logger.create('report');
   var _browsers = null;
   var _tests = null;
-
+  var _startTime = new Date();
   /* ======================================================================== */
   /* INTERNAL FUNCTIONS                                                       */
   /* ======================================================================== */
@@ -65,6 +65,17 @@ function VerboseReporter(logger, config) {
     } else {
       return "no tests".magenta;
     }
+  }
+  
+  function getElapsedTime() {
+		var msec = (new Date() - _startTime);
+		var hh = Math.floor(msec / 1000 / 60 / 60);
+		msec -= hh * 1000 * 60 * 60;
+		var mm = Math.floor(msec / 1000 / 60);
+		msec -= mm * 1000 * 60;
+		var ss = Math.floor(msec / 1000);
+		msec -= ss * 1000;
+		return "Elapsed Time: " + mm + ":" + ss + ":" + msec + " min/sec/ms";
   }
 
   function report(tests, indent) {
@@ -123,7 +134,7 @@ function VerboseReporter(logger, config) {
       print(" - " + browser.name.bold + ": " + browser.total + " tests");
       print("   - " + message(browser));
     }
-
+    print(getElapsedTime());
     print();
   };
 
@@ -194,6 +205,8 @@ function VerboseReporter(logger, config) {
       b.successes ++;
       results.successes ++;
       log.info('Success: ' + result.time + ' ms');
+      print("Test Num: ".bold.yellow + (b.total + "").bold.yellow);
+      print(getElapsedTime().bold.blue);
     } else {
       b.failures ++;
       results.failures ++;
